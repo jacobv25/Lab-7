@@ -2,9 +2,11 @@ package model;
 
 public class CMM implements BasicFunctionality{
 
+    private float grinding;
+
     @Override
     public void setGrindingTime(int secs) {
-
+        grinding = secs;
     }
 
     @Override
