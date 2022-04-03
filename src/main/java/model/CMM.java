@@ -1,8 +1,11 @@
 package model;
 
+import java.io.IOException;
+
 public class CMM implements BasicFunctionality{
 
     private float grinding;
+    private boolean isPowered;
 
     @Override
     public void setGrindingTime(int secs) {
@@ -24,9 +27,21 @@ public class CMM implements BasicFunctionality{
 
     }
 
+    /**
+     * @param num Must be value 0 or 1, else exception is thrown
+     * @throws IOException
+     */
     @Override
-    public void setPowerLED(int num) {
-
+    public void setPowerLED(int num) throws IOException {
+        if(num == 0){
+            isPowered = false;
+        }
+        else if (num == 1){
+            isPowered = true;
+        }
+        else {
+            throw new IOException("Argument must be either 0 (power off) or 1 (power on).");
+        }
     }
 
     @Override
