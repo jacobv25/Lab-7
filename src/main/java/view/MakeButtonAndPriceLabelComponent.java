@@ -2,11 +2,10 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.math.BigDecimal;
 
-public class SouthernComponent extends JPanel{
+public class MakeButtonAndPriceLabelComponent extends JPanel{
     private JLabel priceLabel;
-    public SouthernComponent(){
+    public MakeButtonAndPriceLabelComponent(){
         priceLabel = new JLabel("machine offline");
         setLayout(new FlowLayout());
         add(new JButton("MAKE COFFEE"));

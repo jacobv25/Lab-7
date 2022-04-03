@@ -8,7 +8,6 @@ public class CMM_Util {
 //    public final BigDecimal LATTE = new BigDecimal();
 //    public final BigDecimal ESPRESSO = new BigDecimal();
 //    public final BigDecimal CAPPUCCINO = new BigDecimal();
-
     public static final BigDecimal CREAM = new BigDecimal(.25);
 
     public static final String REGULAR_ACTION_COMMAND = "REGULAR";

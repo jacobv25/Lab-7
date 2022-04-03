@@ -2,12 +2,11 @@ package view;
 
 import controller.CoffeeMenuController;
 import model.CMM_Util;
-import model.RegularCoffee;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class CoffeeMenu extends JPanel {
+public class CoffeeMenuComponent extends JPanel {
 
     private JButton regularCoffeeButton;
     private JButton mochaCoffeeButton;
@@ -18,7 +17,7 @@ public class CoffeeMenu extends JPanel {
     private CoffeeMenuController coffeeMenuController;
     private JLabel priceLabel;
 
-    public CoffeeMenu( JLabel priceLabel){
+    public CoffeeMenuComponent(JLabel priceLabel){
 
         coffeeMenuController = new CoffeeMenuController(priceLabel);
 
