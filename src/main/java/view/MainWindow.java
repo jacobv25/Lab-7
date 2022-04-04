@@ -5,23 +5,23 @@ import java.awt.*;
 
 public class MainWindow extends JFrame {
 
-    private CoffeeMenuComponent coffeeMenuComponent;
-    private LedComponent ledComponent;
-    private MakeButtonAndPriceLabelComponent makeButtonAndPriceLabelComponent;
+    private CoffeeMenuPanel coffeeMenuPanel;
+    private LedPanel ledPanel;
+    private MakeButtonAndPriceLabelPanel makeButtonAndPriceLabelPanel;
 
     public MainWindow(){
 
-        makeButtonAndPriceLabelComponent = new MakeButtonAndPriceLabelComponent();
-        ledComponent = new LedComponent();
-        coffeeMenuComponent = new CoffeeMenuComponent(makeButtonAndPriceLabelComponent.getPriceLabel());
+        makeButtonAndPriceLabelPanel = new MakeButtonAndPriceLabelPanel();
+        ledPanel = new LedPanel();
+        coffeeMenuPanel = new CoffeeMenuPanel(makeButtonAndPriceLabelPanel.getPriceLabel());
 
         setSize(800,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setVisible(true);
-        add(coffeeMenuComponent, BorderLayout.NORTH);
-        add(ledComponent, BorderLayout.CENTER);
-        add(makeButtonAndPriceLabelComponent, BorderLayout.SOUTH);
+        add(coffeeMenuPanel, BorderLayout.NORTH);
+        add(ledPanel, BorderLayout.CENTER);
+        add(makeButtonAndPriceLabelPanel, BorderLayout.SOUTH);
     }
 
     public static void main(String[] args) {

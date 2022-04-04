@@ -6,7 +6,7 @@ import model.CMM_Util;
 import javax.swing.*;
 import java.awt.*;
 
-public class CoffeeMenuComponent extends JPanel {
+public class CoffeeMenuPanel extends JPanel {
 
     private JButton regularCoffeeButton;
     private JButton mochaCoffeeButton;
@@ -15,9 +15,8 @@ public class CoffeeMenuComponent extends JPanel {
     private JButton cappuccinoCoffeeButton;
 
     private CoffeeMenuController coffeeMenuController;
-    private JLabel priceLabel;
 
-    public CoffeeMenuComponent(JLabel priceLabel){
+    public CoffeeMenuPanel(JLabel priceLabel){
 
         coffeeMenuController = new CoffeeMenuController(priceLabel);
 

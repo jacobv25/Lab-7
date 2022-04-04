@@ -3,12 +3,12 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-public class LedComponent extends JPanel {
+public class LedPanel extends JPanel {
     private JLabel runningLED;
     private JLabel coffeeLED;
     private int runningVal;
     private int coffeeVal;
-    public LedComponent(){
+    public LedPanel(){
         runningVal=0;
         coffeeVal=0;
         runningLED = new JLabel("RUNNING=" + runningVal);

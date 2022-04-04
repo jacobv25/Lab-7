@@ -12,9 +12,8 @@ import static model.CMM_Util.REGULAR_ACTION_COMMAND;
 
 public class CoffeeMenuController implements ActionListener {
 
-    private JLabel priceLabel;
     private BigDecimal price;
-
+    private JLabel priceLabel;
 
     public CoffeeMenuController(JLabel _priceLabel){
         priceLabel = _priceLabel;
