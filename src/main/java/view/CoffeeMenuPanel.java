@@ -13,6 +13,9 @@ public class CoffeeMenuPanel extends JPanel {
     private JButton latteCoffeeButton;
     private JButton espressoCoffeeButton;
     private JButton cappuccinoCoffeeButton;
+    private JButton creamCondimentButton;
+    private JButton vanillaCondimentButton;
+    private JButton chocolateCondimentButton;
 
     private CoffeeMenuController coffeeMenuController;
 
@@ -27,12 +30,18 @@ public class CoffeeMenuPanel extends JPanel {
         latteCoffeeButton = new JButton("Latte");
         espressoCoffeeButton = new JButton("Espresso");
         cappuccinoCoffeeButton = new JButton("Cappuccino");
+        creamCondimentButton = new JButton("Cream");
+        vanillaCondimentButton = new JButton("Vanilla");
+        chocolateCondimentButton = new JButton("Chocolate");
 
         regularCoffeeButton.setActionCommand(CMM_Util.REGULAR_ACTION_COMMAND);
         mochaCoffeeButton.setActionCommand(CMM_Util.MOCHA_ACTION_COMMAND);
-        /**
-         * PLEASE FINISH
-         */
+        latteCoffeeButton.setActionCommand(CMM_Util.LATTE_ACTION_COMMAND);
+        espressoCoffeeButton.setActionCommand(CMM_Util.ESPRESSO_ACTION_COMMAND);
+        cappuccinoCoffeeButton.setActionCommand(CMM_Util.CAPPUCCINO_ACTION_COMMAND);
+        creamCondimentButton.setActionCommand(CMM_Util.CREAM_ACTION_COMMAND);
+        vanillaCondimentButton.setActionCommand(CMM_Util.VANILLA_ACTION_COMMAND);
+        chocolateCondimentButton.setActionCommand(CMM_Util.CHOCOLATE_ACTION_COMMAND);
 
         addActionListeners();
 
@@ -41,6 +50,9 @@ public class CoffeeMenuPanel extends JPanel {
         add(latteCoffeeButton);
         add(espressoCoffeeButton);
         add(cappuccinoCoffeeButton);
+        add(creamCondimentButton);
+        add(vanillaCondimentButton);
+        add(chocolateCondimentButton);
 
         setVisible(true);
     }
@@ -48,7 +60,11 @@ public class CoffeeMenuPanel extends JPanel {
     private void addActionListeners() {
         regularCoffeeButton.addActionListener(coffeeMenuController);
         mochaCoffeeButton.addActionListener(coffeeMenuController);
-//        latteCoffeeButton
-//        ...
+        latteCoffeeButton.addActionListener(coffeeMenuController);
+        espressoCoffeeButton.addActionListener(coffeeMenuController);
+        cappuccinoCoffeeButton.addActionListener(coffeeMenuController);
+        creamCondimentButton.addActionListener(coffeeMenuController);
+        vanillaCondimentButton.addActionListener(coffeeMenuController);
+        chocolateCondimentButton.addActionListener(coffeeMenuController);
     }
 }

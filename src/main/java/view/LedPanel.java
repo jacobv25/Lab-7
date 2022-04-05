@@ -11,8 +11,8 @@ public class LedPanel extends JPanel {
     public LedPanel(){
         runningVal=0;
         coffeeVal=0;
-        runningLED = new JLabel("RUNNING=" + runningVal);
-        coffeeLED = new JLabel("COFFEE=  " + coffeeVal);
+        runningLED = new JLabel("RUNNING: " + runningVal);
+        coffeeLED = new JLabel("COFFEE: " + coffeeVal);
         setLayout(new FlowLayout());
         add(runningLED);
         add(coffeeLED);
