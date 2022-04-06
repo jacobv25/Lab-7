@@ -58,7 +58,7 @@ public class CMM implements BasicFunctionality{
 	@Override
 	public void setTypeLED(int num) {
 		this.type = num;
-		displayLED();
+		System.out.printf("[ %d | %d ]\n", "power", "type");
 	}
 
     @Override
