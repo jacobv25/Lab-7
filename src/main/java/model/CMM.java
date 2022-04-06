@@ -6,6 +6,7 @@ public class CMM implements BasicFunctionality{
 
     private float grinding;
     private boolean isPowered;
+	private int type;
 
     @Override
     public void setGrindingTime(int secs) {
@@ -14,6 +15,7 @@ public class CMM implements BasicFunctionality{
 
     @Override
     public void setTemperature(int degree) {
+	    System.out.printf("\t\tHeating water to %d degrees.\n", degree);
 
     }
 
@@ -58,7 +60,7 @@ public class CMM implements BasicFunctionality{
 	@Override
 	public void setTypeLED(int num) {
 		this.type = num;
-		System.out.printf("[ %d | %d ]\n", "power", "type");
+		System.out.printf("[ %d | %d ]\n", type);
 	}
 
     @Override
