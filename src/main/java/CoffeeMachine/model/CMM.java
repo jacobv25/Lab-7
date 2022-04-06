@@ -1,4 +1,6 @@
-package model;
+package CoffeeMachine.model;
+
+import CoffeeMachine.Coffee.CoffeeProgram_IF;
 
 import java.io.IOException;
 
@@ -6,7 +8,6 @@ public class CMM implements BasicFunctionality{
 
     private float grinding;
     private boolean isPowered;
-	private int type;
 
     @Override
     public void setGrindingTime(int secs) {
@@ -15,7 +16,6 @@ public class CMM implements BasicFunctionality{
 
     @Override
     public void setTemperature(int degree) {
-	    System.out.printf("\t\tHeating water to %d degrees.\n", degree);
 
     }
 
@@ -59,12 +59,12 @@ public class CMM implements BasicFunctionality{
 	 */
 	@Override
 	public void setTypeLED(int num) {
-		this.type = num;
-		System.out.printf("[ %d | %d ]\n", type);
+//		this.type = num;
+//		displayLED();
 	}
 
     @Override
-    public void displayPrice(Coffee_IF cf) {
+    public void displayPrice(CoffeeProgram_IF cf) {
 
     }
 }
