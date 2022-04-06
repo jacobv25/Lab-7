@@ -1,4 +1,6 @@
-package model;
+package CoffeeMachine.model;
+
+import CoffeeMachine.Coffee.CoffeeProgram_IF;
 
 import java.io.IOException;
 
@@ -9,5 +11,5 @@ public interface BasicFunctionality {
     void wait(int seconds);
     void setPowerLED (int num) throws IOException;
     void setTypeLED (int num);
-    void displayPrice(Coffee_IF cf);
+    void displayPrice(CoffeeProgram_IF cf);
 }

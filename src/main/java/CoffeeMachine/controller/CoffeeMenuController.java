@@ -1,11 +1,11 @@
-package controller;
+package CoffeeMachine.controller;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 
-import static model.CMM_Util.*;
+import static CoffeeMachine.model.CMM_Util.*;
 
 public class CoffeeMenuController implements ActionListener {
 

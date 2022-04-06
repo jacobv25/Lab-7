@@ -1,4 +1,4 @@
-package model;
+package CoffeeMachine.model;
 
 import java.math.BigDecimal;
 

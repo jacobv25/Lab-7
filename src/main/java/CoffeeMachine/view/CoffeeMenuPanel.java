@@ -1,7 +1,7 @@
-package view;
+package CoffeeMachine.view;
 
-import controller.CoffeeMenuController;
-import model.CMM_Util;
+import CoffeeMachine.controller.CoffeeMenuController;
+import CoffeeMachine.model.CMM_Util;
 
 import javax.swing.*;
 import java.awt.*;

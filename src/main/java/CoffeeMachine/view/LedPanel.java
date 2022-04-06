@@ -1,4 +1,4 @@
-package view;
+package CoffeeMachine.view;
 
 import javax.swing.*;
 import java.awt.*;
