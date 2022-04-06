@@ -7,3 +7,4 @@ public interface CoffeeProgram_IF {
     void makeCoffee();
     public enum CoffeeType {REGULAR, MOCHA, LATTE, CAPPUCCINO, ESPRESSO}
 }
+

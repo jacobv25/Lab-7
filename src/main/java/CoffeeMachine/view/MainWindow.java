@@ -15,6 +15,9 @@ public class MainWindow extends JFrame {
         ledPanel = new LedPanel();
         coffeeMenuPanel = new CoffeeMenuPanel(makeButtonAndPriceLabelPanel.getPriceLabel());
 
+//        coffeeMenuPanel.addActionListener(makeButtonAndPriceLabelPanel.getPriceLabel());
+        makeButtonAndPriceLabelPanel.addActionListener(coffeeMenuPanel.getController());
+
         setSize(800,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

@@ -19,6 +19,10 @@ public class CoffeeMenuPanel extends JPanel {
 
     private CoffeeMenuController coffeeMenuController;
 
+    public CoffeeMenuController getController(){
+        return coffeeMenuController;
+    }
+
     public CoffeeMenuPanel(JLabel priceLabel){
 
         coffeeMenuController = new CoffeeMenuController(priceLabel);

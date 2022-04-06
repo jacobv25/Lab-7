@@ -14,7 +14,6 @@ public class RegularCoffeeProgram extends AbstractCoffeeProgram{
         environment.holdTemperature(2);
         environment.wait(15);
         environment.setPowerLED(0);
-
     }
 
 

@@ -9,7 +9,7 @@ import static CoffeeMachine.model.CMM_Util.*;
 
 public class CoffeeMenuController implements ActionListener {
 
-    private BigDecimal price;
+    private static BigDecimal price;
     private JLabel priceLabel;
 
     public CoffeeMenuController(JLabel _priceLabel){
@@ -19,38 +19,44 @@ public class CoffeeMenuController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        /**
+         * COFFEES
+         */
         switch (e.getActionCommand()){
             case REGULAR_ACTION_COMMAND:
-                price = REGULAR;
-                priceLabel.setText(price.toString());
+                price = new BigDecimal( REGULAR.floatValue());
+//                priceLabel.setText(price.toString());
                 break;
             case MOCHA_ACTION_COMMAND:
-                price = MOCHA;
-                priceLabel.setText(price.toString());
+                price = new BigDecimal(MOCHA.floatValue());
+//                priceLabel.setText(price.toString());
                 break;
             case LATTE_ACTION_COMMAND:
-                price = LATTE;
-                priceLabel.setText(price.toString());
+                price = new BigDecimal(LATTE.floatValue());
+//                priceLabel.setText(price.toString());
                 break;
             case ESPRESSO_ACTION_COMMAND:
-                price = ESPRESSO;
-                priceLabel.setText(price.toString());
+                price = new BigDecimal(ESPRESSO.floatValue());
+//                priceLabel.setText(price.toString());
                 break;
             case CAPPUCCINO_ACTION_COMMAND:
-                price = CAPPUCCINO;
-                priceLabel.setText(price.toString());
+                price = new BigDecimal(CAPPUCCINO.floatValue());
+//                priceLabel.setText(price.toString());
                 break;
+            /**
+             * CONDIMENTS
+             */
             case CREAM_ACTION_COMMAND:
-                price = CREAM;
-                priceLabel.setText(price.toString());
+                price.add(CREAM);
+//                priceLabel.setText(price.toString());
                 break;
             case VANILLA_ACTION_COMMAND:
-                price = VANILLA;
-                priceLabel.setText(price.toString());
+                price.add(VANILLA);
+//                priceLabel.setText(price.toString());
                 break;
             case CHOCOLATE_ACTION_COMMAND:
-                price = CHOCOLATE;
-                priceLabel.setText(price.toString());
+                price.add(CHOCOLATE);
+//                priceLabel.setText(price.toString());
                 break;
         }
     }
