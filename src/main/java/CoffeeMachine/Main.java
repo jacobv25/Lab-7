@@ -7,6 +7,10 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import static CoffeeMachine.Coffee.CoffeeProgram_IF.CoffeeType.REGULAR;
+import static CoffeeMachine.Coffee.CoffeeProgram_IF.CoffeeType.MOCHA;
+import static CoffeeMachine.Coffee.CoffeeProgram_IF.CoffeeType.LATTE;
+import static CoffeeMachine.Coffee.CoffeeProgram_IF.CoffeeType.CAPPUCCINO;
+import static CoffeeMachine.Coffee.CoffeeProgram_IF.CoffeeType.ESPRESSO;
 import static CoffeeMachine.model.CMM_Util.VANILLA;
 
 
@@ -18,9 +22,11 @@ public class Main {
         String input;
 
         while(isPowered) {
-            System.out.println("enter 1 to make regular coffee. enter 'x' when done.");
+            System.out.println("enter a number between 1-5 to make coffee. enter 'x' when done.");
             input = scanner.nextLine();
-            while(!input.equals("1") && !input.equalsIgnoreCase("x")){
+            while(!input.equals("1") & !input.equals("2") & !input.equals("3") &
+                    !input.equals("4")
+                    & !input.equals("5") && !input.equalsIgnoreCase("x")){
                 System.out.println("bad input: " + input +". press 1 to make regular coffee. enter 'x' to exit.");
                 input = scanner.next();
             }
@@ -38,6 +44,65 @@ public class Main {
                         e.printStackTrace();
                     }
                     break;
+                  case "2":
+                    try {
+                        os.setChosenCoffeeType(MOCHA);
+                        isPowered = false;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+
+                    }
+
+                    break;
+
+                case "3":
+                    try {
+                        os.setChosenCoffeeType(LATTE);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case "4":
+                    try {
+                        os.setChosenCoffeeType(CAPPUCCINO);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case "5":
+                    try {
+                        os.setChosenCoffeeType(ESPRESSO);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
                 case "x":
                     System.exit(0);
             }
