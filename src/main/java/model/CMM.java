@@ -44,10 +44,22 @@ public class CMM implements BasicFunctionality{
         }
     }
 
-    @Override
-    public void setTypeLED(int num) {
-
-    }
+    
+    /**
+	 * it displays which type of order is displayed
+	 * 0 serves as No order selected
+	 * 1.0 for regular coffee
+	 * 2.0 for Mocha
+	 * 3.0 for Latte
+	 * 4.0 for Espresso
+	 * 5.0 for Cappuccino
+	 * @param num the selected order
+	 */
+	@Override
+	public void setTypeLED(int num) {
+		this.type = num;
+		displayLED();
+	}
 
     @Override
     public void displayPrice(Coffee_IF cf) {
