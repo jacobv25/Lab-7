@@ -35,7 +35,7 @@ public class Main {
                     "enter 3 for Latte coffee.\n" +
                     "enter 4 for Cappuccino coffee.\n" +
                     "enter 5 for Espresso coffee.\n" +
-                                "enter enter 'x' when done.");
+                                "enter enter 'x' to exit.");
             input = scanner.nextLine();
             while(!input.equals("1") & !input.equals("2") & !input.equals("3") &
                     !input.equals("4")
