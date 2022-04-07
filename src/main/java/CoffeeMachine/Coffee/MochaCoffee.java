@@ -8,6 +8,7 @@ public class MochaCoffee extends AbstractCoffeeProgram {
 
     @Override
     public void makeCoffee() {
+        environment.setPowerLED(1);
         environment.setTypeLED(MOCHA);
         environment.setGrinding(5);
         environment.setTemperature(200);
