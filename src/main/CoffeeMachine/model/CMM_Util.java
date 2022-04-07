@@ -1,8 +1,16 @@
-package CoffeeMachine.model;
+package main.CoffeeMachine.model;
 
+import main.CoffeeMachine.Image.ImageFactory;
+
+import javax.swing.*;
 import java.math.BigDecimal;
 
 public class CMM_Util {
+
+    //region CONSTANTS
+    public static final String RED_LED = "/images/red_led.png";
+    public static final String GREEN_LED = "/images/green_led.png";
+
     public static final BigDecimal REGULAR = new BigDecimal(1.0);
     public static final BigDecimal MOCHA = new BigDecimal(2.0);
     public static final BigDecimal LATTE = new BigDecimal(3.0);
@@ -21,6 +29,19 @@ public class CMM_Util {
     public static final String CREAM_ACTION_COMMAND = "CREAM";
     public static final String VANILLA_ACTION_COMMAND = "VANILLA";
     public static final String CHOCOLATE_ACTION_COMMAND = "CHOCOLATE";
-    // TODO: ADD MORE ACTION COMMANDS
+    public static final String MAKE_ACTION_COMMAND = "MAKE_COFFEE";
+    //endregion
 
+    private static CMM_Util instance = new CMM_Util();
+    private CMM_Util() {};
+    public static CMM_Util getInstance() {
+        return instance;
+    }
+
+    public ImageIcon loadImage(String path) {
+        ImageFactory imageFactory = new ImageFactory();
+        imageFactory.setPath(path);
+        return imageFactory.loadImage();
+
+    }
 }

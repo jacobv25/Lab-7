@@ -1,6 +1,6 @@
-package CoffeeMachine.model;
+package main.CoffeeMachine.model;
 
-import CoffeeMachine.Coffee.CoffeeProgram_IF;
+import main.CoffeeMachine.Coffee.CoffeeProgram_IF;
 
 import java.io.IOException;
 

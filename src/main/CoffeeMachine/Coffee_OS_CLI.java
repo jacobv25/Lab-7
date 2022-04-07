@@ -1,23 +1,31 @@
-package CoffeeMachine;
+package main.CoffeeMachine;
 
-import CoffeeMachine.Coffee.CoffeeProgram_IF;
+import main.CoffeeMachine.Coffee.CoffeeProgram_IF;
+import main.CoffeeMachine.Orders.Order;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.ArrayList;
+import java.util.List;
 
-import static CoffeeMachine.model.CMM_Util.*;
+import static main.CoffeeMachine.model.CMM_Util.*;
 
-public class CoffeeOS implements CoffeeOS_API{
-
-    private CoffeeProgram_IF currentCoffeeProgram;
-
-    public CoffeeOS(){}
+public class Coffee_OS_CLI implements CoffeeOS_API{
 
     private BigDecimal price;
+    private List<Order> saleRecords;
+    private CoffeeProgram_IF currentCoffeeProgram;
+
+    public void addOrderToRecords(Order record) {
+        saleRecords.add(record);
+    }
+
+    public Coffee_OS_CLI(){
+        saleRecords = new ArrayList<>();
+    }
 
     public void setChosenCoffeeType(CoffeeProgram_IF.CoffeeType type) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         String compiledClassLocation = new File(".").getCanonicalPath();
@@ -29,24 +37,24 @@ public class CoffeeOS implements CoffeeOS_API{
 
         switch (type){
             case REGULAR:
-                c = classLoader.loadClass("CoffeeMachine.Coffee.RegularCoffeeProgram");
+                c = classLoader.loadClass("main.CoffeeMachine.Coffee_CLI.RegularCoffee_CLI");
                 price = REGULAR;
                 break;
             case MOCHA:
-                c = classLoader.loadClass("CoffeeMachine.Coffee.MochaCoffee");
+                c = classLoader.loadClass("main.CoffeeMachine.Coffee_CLI.MochaCoffee_CLI");
                 price = MOCHA;
                 break;
             case LATTE:
-                c = classLoader.loadClass("CoffeeMachine.Coffee.LatteCoffee");
+                c = classLoader.loadClass("main.CoffeeMachine.Coffee_CLI.LatteCoffee_CLI");
                 price = LATTE;
                 break;
             case CAPPUCCINO:
-                c = classLoader.loadClass("CoffeeMachine.Coffee.CappuccinoCoffee");
+                c = classLoader.loadClass("main.CoffeeMachine.Coffee_CLI.CappuccinoCoffee_CLI");
                 price = CAPPUCCINO;
                 break;
             case ESPRESSO:
+                c = classLoader.loadClass("main.CoffeeMachine.Coffee_CLI.EspressoCoffee_CLI");
                 price = ESPRESSO;
-                c = classLoader.loadClass("CoffeeMachine.Coffee.EspressoCoffee");
                 break;
         }
         currentCoffeeProgram = (CoffeeProgram_IF) c.newInstance();
@@ -57,7 +65,7 @@ public class CoffeeOS implements CoffeeOS_API{
         System.out.println("Price=" + price);
     }
 
-    public void start(){
+    public void start() throws InterruptedException {
         currentCoffeeProgram.makeCoffee();
         displayPrice();
     }
@@ -98,6 +106,19 @@ public class CoffeeOS implements CoffeeOS_API{
         }
         else {
             System.out.println("Power On.");
+        }
+    }
+
+    public BigDecimal getPrice(){
+        return price;
+    }
+    public void setPrice(BigDecimal _price) {
+        price = _price;
+    }
+
+    public void displayOrders() {
+        for(Order order: saleRecords) {
+            System.out.println(order);
         }
     }
 }
