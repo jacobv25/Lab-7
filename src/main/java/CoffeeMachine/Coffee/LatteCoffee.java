@@ -8,6 +8,7 @@ public class LatteCoffee extends AbstractCoffeeProgram {
 
     @Override
     public void makeCoffee() {
+        environment.setPowerLED(1);
         environment.setTypeLED(LATTE);
         environment.setGrinding(4);
         environment.setTemperature(200);
